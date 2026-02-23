@@ -58,12 +58,15 @@ p {
     transition: all 0.3s ease;
 }
 
-.lotto__pick div:hover {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
+.lotto__pick div:hover,
+.selected,
+.winning__numbers div {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
 }
 
-.picked__nunbers {
+
+.picked__nunbers, .winning__numbers {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,13 +78,14 @@ p {
     margin:  20px 0 ;
 }
 
-.picked__nunbers h3{
+h3{
     color: var(--text-primary);
     font-family: "Courier New", Courier, monospace;
     margin-right: 20px;
 }
 
-.picked__nunbers div{
+.picked__nunbers div,
+.winning__numbers div{
     width: 60px;
     height: 60px;
     background-color: var(--ball-color);
@@ -94,6 +98,13 @@ p {
     font-family: "Courier New", Courier, monospace;
 }
 
+.winning__numbers{
+    background-color: var(--win-glow);
+}
+
+.winning__numbers h3{
+    color: var(--bg-primary);
+}
 button {
     padding: 10px 20px;
     background-color: #C0392B;
