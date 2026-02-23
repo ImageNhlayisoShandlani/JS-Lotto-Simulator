@@ -1,0 +1,113 @@
+:root {
+  --bg-primary: #001f3f;
+  --bg-secondary: #00305e;
+  --ball-color: #ffd700;
+  --ball-text: #001f3f;
+  --accent: #ffd700;
+  --text-primary: #ffffff;
+  --text-secondary: #a8b8cc;
+  --win-glow: #ffd700;
+}
+
+body {
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.lotto__pick {
+    width: 40%;
+    height: fit-content;
+    padding: 10px;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: space-between;
+}
+
+.lotto__pick div{
+    width: 60px;
+    height: 60px;
+    background-color: var(--ball-color);
+    color: var(--ball-text);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-family: "Courier New", Courier, monospace;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lotto__pick div:hover {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.picked__nunbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: fit-content;
+    padding: 10px;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    margin:  20px 0 ;
+}
+
+.picked__nunbers h3{
+    color: var(--text-primary);
+    font-family: "Courier New", Courier, monospace;
+    margin-right: 20px;
+}
+
+.picked__nunbers div{
+    width: 60px;
+    height: 60px;
+    background-color: var(--ball-color);
+    color: var(--ball-text);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #C0392B;
+    color: var(--text-primary);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Courier New", Courier, monospace;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #E74C3C;
+}
