@@ -1,7 +1,7 @@
 "use strict";
 
 //Variables
-let lottoNumbers = [
+const lottoNumbers = [
   "01",
   "02",
   "03",
@@ -56,18 +56,19 @@ document.addEventListener("DOMContentLoaded", () => {
 //Functions
 
 /**
- *
- * @param {HTMLDivElement} div
  * This function handles the selection of numbers by the user. It checks if the user has already selected 6 numbers
  * and if the number is not already selected. If both conditions are met, it adds the number to the selectedNumber array,
  * adds a "selected" class to the div, and appends it to the pickedNumbersDiv. If the user tries to select more than 6 numbers,
  * an alert is shown.
+ * @param {HTMLDivElement} div
+ * @returns {void}
  */
 function handleNumberSelection(div) {
   if (selectedNumber.length < 6 && !selectedNumber.includes(div.textContent)) {
     selectedNumber.push(div.textContent);
     console.log(selectedNumber);
     div.classList.add("selected");
+    div.setAttribute("id", div.textContent);
     pickedNumbersDiv.appendChild(div);
   } else {
     alert("You can only select 6 numbers!");
@@ -75,7 +76,6 @@ function handleNumberSelection(div) {
 }
 
 /**
- *
  * This function genrates a 6 random draw numbers between 1-20
  */
 
@@ -101,12 +101,15 @@ function generateDrawNumbers() {
     winingNumbersDiv.appendChild(numberDiv);
   });
 
-  if (matches > 0) {
+
+  findMatches();
+  if (macthedNumbers.length > 0) {
     alert(
       "Congratulations! You matched " +
-        matches +
-        " numbers!" + " which are " +
-        findMatches().map((item) => item),
+        macthedNumbers.length +
+        " numbers!" +
+        " which are " +
+        macthedNumbers.map((item) => item),
     );
   } else {
     alert("Sorry, you didn't match any numbers. Better luck next time!");
@@ -115,12 +118,11 @@ function generateDrawNumbers() {
 }
 
 function findMatches() {
-  selectedNumber.forEach((number) => {
-    if (winingNumbers.includes(number)) {
-      matches++;
+  winingNumbers.forEach((number) => {
+    if (selectedNumber.includes(number)) {
       macthedNumbers.push(number);
+      document.getElementById(number).classList.add("matched");
     }
   });
-
-  return macthedNumbers;
+  console.log(macthedNumbers);
 }

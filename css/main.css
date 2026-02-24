@@ -105,6 +105,12 @@ h3{
 .winning__numbers h3{
     color: var(--bg-primary);
 }
+
+.matched {
+    background-color: var(--accent) !important;
+    color: var(--bg-primary) !important;
+    box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+}
 button {
     padding: 10px 20px;
     background-color: #C0392B;
